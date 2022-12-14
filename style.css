@@ -1,0 +1,82 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Caveat", cursive;
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient(#cf5a5b, #8389ce);
+  height: 100vh;
+  border-bottom: 1px solid #000;
+}
+
+#searchAndRandomContainer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  transition: all 0.3s;
+}
+
+#searchInput {
+  font-family: "Caveat", cursive;
+  font-size: 2.4rem;
+  background-color: #bdc1ef;
+
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0.3rem 0.3rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  font-family: "Caveat", cursive;
+  font-size: 2.4rem;
+
+  padding: 1rem;
+  background-color: #9198e5;
+  background-image: linear-gradient(210deg, transparent 10%, #e97474 100%);
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0.3rem 0.3rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+  transition: background-color 0.5s ease 0s;
+}
+
+.btn:hover {
+  background-color: #747ab7;
+}
+
+#heroImg {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 1.8rem;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+}
+
+img {
+  display: block;
+  margin: auto;
+  border: 1rem solid #bdc1ef;
+
+  border-radius: 50%;
+}
+
+.statsContainer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+#stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  gap: 1rem;
+  font-size: 1.6rem;
+}

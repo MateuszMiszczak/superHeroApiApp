@@ -4,20 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Super Hero App</title>
 
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <input id="searchInput" type="text" />
-    <button id="searchBtn">Search</button>
-    <button id="newHero">Get random hero</button>
-    <br />
-    <div id="heroName"></div>
-    <div id="heroImg">
-      <img src="" alt="" />
+    <div id="searchAndRandomContainer">
+      <input id="searchInput" type="text" placeholder="Type in Hero name" />
+      <button id="searchBtn" class="btn">Search</button>
+      <button id="newHero" class="btn">Get random hero</button>
     </div>
-    <div id="stats"></div>
+    <br />
+
+    <div id="heroImg">
+      <img class="img" src="" alt="" />
+    </div>
+    <div class="statsContainer">
+      <div id="stats"></div>
+    </div>
 
     <script src="script.js"></script>
   </body>
