@@ -19,6 +19,11 @@ const changeBorderOfImgsToNone = () => {
   });
 };
 
+const addBorderAndShadowTocardCont = () => {
+  cardContainer.style.border = "0.2rem solid #bdc1ef";
+  cardContainer.style.boxShadow = "1rem 1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.2)";
+};
+
 const setBiggerZindex = () => {
   statsDiv.style.zIndex = "10";
 };
@@ -30,6 +35,7 @@ const getRandomSuperHero = (id) => {
       const name = `<h2> ${json.name} </h2>`;
       heroImageDiv.innerHTML = `${name}<img src=${json.url} height=200 width=200 />`;
       getHeroStats(id);
+      addBorderAndShadowTocardCont();
     });
 };
 
@@ -55,6 +61,7 @@ const getSearchSuperHero = (name) => {
       heroImageDiv.innerHTML = `${name} <img src=${hero.image.url} height=200 width=200 /> `;
       statsDiv.innerHTML = `${int} ${combat} ${dur} ${power} ${speed} ${strength} `;
       setBiggerZindex();
+      addBorderAndShadowTocardCont();
     });
 };
 
@@ -76,6 +83,7 @@ const getHeroStats = (id) => {
 const runApp = () => {
   setBiggerZindex();
   changeBorderOfImgsToNone();
+
   btnNewHero.onclick = () => getRandomSuperHero(generateNewId());
   searchButton.onclick = () => getSearchSuperHero(searchInput.value);
 };
