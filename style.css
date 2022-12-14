@@ -49,6 +49,24 @@ body {
   background-color: #747ab7;
 }
 
+#cardContainer {
+  position: relative;
+}
+
+#cardContainer::before {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  bottom: 0.5rem;
+  left: 60rem;
+  right: 60rem;
+  border: 0.2rem solid #bdc1ef;
+  border-radius: 3%;
+  background-color: #9198e594;
+  background-image: linear-gradient(210deg, transparent 10%, #e97474 100%);
+  box-shadow: 1rem 1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
+}
+
 #heroImgDiv {
   display: flex;
   flex-direction: column;

@@ -11,11 +11,16 @@ const searchInput = document.getElementById("searchInput");
 const statsDiv = document.getElementById("stats");
 const heroImg = document.getElementsByClassName("heroImg");
 const allImgs = document.querySelectorAll("img");
+const cardContainer = document.getElementById("cardContainer");
 
 const changeBorderOfImgsToNone = () => {
   allImgs.forEach((img) => {
     img.style.border = "none";
   });
+};
+
+const setBiggerZindex = () => {
+  statsDiv.style.zIndex = "10";
 };
 
 const getRandomSuperHero = (id) => {
@@ -38,6 +43,7 @@ const getSearchSuperHero = (name) => {
     .then((response) => response.json())
     .then((json) => {
       const hero = json.results[0];
+      console.log(json.results[0]);
       const name = `<h2> ${hero.name} </h2>`;
       const int = `<h3>Intelligence: ${hero.powerstats.intelligence} </h3>`;
       const combat = `<h3>Combat: ${hero.powerstats.combat} </h3>`;
@@ -48,6 +54,7 @@ const getSearchSuperHero = (name) => {
 
       heroImageDiv.innerHTML = `${name} <img src=${hero.image.url} height=200 width=200 /> `;
       statsDiv.innerHTML = `${int} ${combat} ${dur} ${power} ${speed} ${strength} `;
+      setBiggerZindex();
     });
 };
 
@@ -56,7 +63,6 @@ const getHeroStats = (id) => {
     .then((response) => response.json())
     .then((json) => {
       const int = `<h3>Intelligence: ${json.intelligence} </h3>`;
-      console.log(int);
       const combat = `<h3>Combat: ${json.combat} </h3>`;
       const dur = `<h3>Durability: ${json.durability} </h3>`;
       const power = `<h3>Power: ${json.power} </h3>`;
@@ -68,6 +74,7 @@ const getHeroStats = (id) => {
 };
 
 const runApp = () => {
+  setBiggerZindex();
   changeBorderOfImgsToNone();
   btnNewHero.onclick = () => getRandomSuperHero(generateNewId());
   searchButton.onclick = () => getSearchSuperHero(searchInput.value);
