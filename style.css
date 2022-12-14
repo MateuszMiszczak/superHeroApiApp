@@ -49,7 +49,7 @@ body {
   background-color: #747ab7;
 }
 
-#heroImg {
+#heroImgDiv {
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
@@ -62,8 +62,8 @@ body {
 img {
   display: block;
   margin: auto;
-  border: 1rem solid #bdc1ef;
 
+  border: 1rem solid #bdc1ef;
   border-radius: 50%;
 }
 
