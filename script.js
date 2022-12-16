@@ -9,7 +9,6 @@ const heroImageDiv = document.getElementById("heroImgDiv");
 const searchButton = document.getElementById("searchBtn");
 const searchInput = document.getElementById("searchInput");
 const statsDiv = document.getElementById("stats");
-const heroImg = document.getElementsByClassName("heroImg");
 const allImgs = document.querySelectorAll("img");
 const cardContainer = document.getElementById("cardContainer");
 
@@ -24,8 +23,8 @@ const addBorderAndShadowTocardCont = () => {
   cardContainer.style.boxShadow = "1rem 1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.2)";
 };
 
-const setBiggerZindex = () => {
-  statsDiv.style.zIndex = "10";
+const displayStatsOnHover = () => {
+  cardContainer.onmousemove = () => {};
 };
 
 const getRandomSuperHero = (id) => {
@@ -81,7 +80,6 @@ const getHeroStats = (id) => {
 };
 
 const runApp = () => {
-  setBiggerZindex();
   changeBorderOfImgsToNone();
 
   btnNewHero.onclick = () => getRandomSuperHero(generateNewId());

@@ -13,6 +13,13 @@ body {
   border-bottom: 1px solid #000;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
 #searchAndRandomContainer {
   display: flex;
   text-align: center;
@@ -49,28 +56,78 @@ body {
   background-color: #747ab7;
 }
 
-#cardContainer {
-  position: relative;
+.cardWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 120rem;
+  margin: 2rem auto;
+  padding: 0 2rem;
 }
 
 .cardContainerStyle {
+  position: relative;
   margin: 4rem 40vw;
-  margin-left: 40vw;
-  margin-right: 40vw;
 
   border-radius: 1%;
   background-color: #9198e594;
-  background-image: linear-gradient(210deg, transparent 10%, #e97474 100%);
+  background-image: linear-gradient(210deg, transparent 10%, #e97474 20%);
+  box-shadow: 0.3rem 0.3rem 0.2rem 0.1rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.cardContainerStyle:hover .statsContainer {
+  transform: scale(1.1);
+  color: #000;
+}
+
+.cardContainerStyle:hover {
+  transform: scale(1.1);
+}
+
+.cardContainerStyle::before,
+.cardContainerStyle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0.2rem solid #bdc1ef;
+  border-radius: inherit;
+  background-color: inherit;
+  background-image: inherit;
+  box-shadow: inherit;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.cardContainerStyle:hover::before {
+  transform: rotate(-20deg);
+  transition-delay: 0.1s;
+}
+
+.cardContainerStyle:hover::after {
+  transform: rotate(-10deg);
+  transition-delay: 0.1s;
 }
 
 #heroImgDiv {
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
+  padding: 3rem;
   font-size: 1.8rem;
   text-align: center;
   justify-content: center;
   position: relative;
+  transition: all 0.3s;
+}
+
+#heroImgDiv:hover {
+  cursor: pointer;
 }
 
 img {
@@ -85,6 +142,13 @@ img {
   display: flex;
   text-align: center;
   justify-content: center;
+
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: -25rem;
+  color: transparent;
+  transition: all 0.5s;
 }
 
 #stats {

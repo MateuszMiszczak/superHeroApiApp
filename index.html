@@ -17,21 +17,25 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div id="searchAndRandomContainer">
-      <input id="searchInput" type="text" placeholder="Type in Hero name" />
-      <button id="searchBtn" class="btn">Search</button>
-      <button id="newHero" class="btn">Get random hero</button>
-    </div>
-    <br />
-    <div id="cardContainer" class="cardContainerStyle">
-      <div id="heroImgDiv">
-        <img class="heroImg" src="" alt="" />
+    <div class="wrapper">
+      <div id="searchAndRandomContainer">
+        <input id="searchInput" type="text" placeholder="Type in Hero name" />
+        <button id="searchBtn" class="btn">Search</button>
+        <button id="newHero" class="btn">Get random hero</button>
       </div>
-      <div class="statsContainer">
-        <div id="stats"></div>
-      </div>
-    </div>
+      <br />
 
+      <div class="cardWrapper">
+        <div id="cardContainer" class="cardContainerStyle">
+          <div id="heroImgDiv">
+            <img class="heroImg" src="" alt="" />
+          </div>
+          <div class="statsContainer">
+            <div id="stats"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
